@@ -7,6 +7,14 @@ import os
 from glob import glob
 from numpy import random
 import io
+import torch
+import ultralytics.nn.tasks
+from ultralytics import YOLO
+
+torch.serialization.add_safe_globals(
+    [ultralytics.nn.tasks.DetectionModel]
+)
+
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
