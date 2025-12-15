@@ -1,9 +1,6 @@
-import streamlit as st  # type: ignore
-import cv2
-import requests # type: ignore
-from PIL import Image
 import os
 os.environ["TORCH_LOAD_WEIGHTS_ONLY"] = "0"
+os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
 
 import streamlit as st
 import cv2
@@ -15,6 +12,7 @@ import io
 
 import torch
 from ultralytics import YOLO
+
 
 
 
