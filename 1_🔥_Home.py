@@ -1,28 +1,29 @@
 import streamlit as st  # type: ignore
 import cv2
-from ultralytics import YOLO
 import requests # type: ignore
 from PIL import Image
 import os
+os.environ["TORCH_LOAD_WEIGHTS_ONLY"] = "0"
+
+import streamlit as st
+import cv2
+import requests
+from PIL import Image
 from glob import glob
 from numpy import random
 import io
+
 import torch
-import ultralytics.nn.tasks
 from ultralytics import YOLO
 
-torch.serialization.add_safe_globals(
-    [ultralytics.nn.tasks.DetectionModel]
-)
 
-torch.serialization._weights_only_unpickler = None
 
 
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 # Function to load the YOLO model
-@st.cache_resource
+#@st.cache_resource
 def load_model(model_path):
     model = YOLO(model_path)
     return model
