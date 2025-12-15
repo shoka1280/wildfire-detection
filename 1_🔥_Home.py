@@ -15,6 +15,9 @@ torch.serialization.add_safe_globals(
     [ultralytics.nn.tasks.DetectionModel]
 )
 
+torch.serialization._weights_only_unpickler = None
+
+
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
