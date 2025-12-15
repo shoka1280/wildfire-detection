@@ -11,10 +11,12 @@ from numpy import random
 import io
 
 import torch
+import ultralytics                # ← THIS WAS MISSING
 from ultralytics import YOLO
 
-
-
+torch.serialization.add_safe_globals(
+    [ultralytics.nn.tasks.DetectionModel]
+)
 
 
 
