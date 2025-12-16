@@ -1,5 +1,5 @@
 import os
-os.environ["TORCH_LOAD_WEIGHTS_ONLY"] = "0"
+
 os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
 
 import streamlit as st
@@ -11,12 +11,9 @@ from numpy import random
 import io
 
 import torch
-import ultralytics                # ← THIS WAS MISSING
+# ← THIS WAS MISSING
 from ultralytics import YOLO
 
-torch.serialization.add_safe_globals(
-    [ultralytics.nn.tasks.DetectionModel]
-)
 
 
 
